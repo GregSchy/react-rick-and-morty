@@ -1,7 +1,24 @@
 import React from 'react'
 
-export const Cards = () => {
+
+export const Cards = ({ results }) => {
+  let display;
+  console.log(results)
+
+  if(results){
+    display = results.map(x=>{
+        let{id, name} = x
+        return(  <div key={id} className="col-4">
+            {name}
+        </div>)
+    })
+  }
+  else {
+    display = "No Characters found ;/"
+  }
+    
   return (
-    <div className="col-4">Cards</div>
+    
+    <>{display}</>
   )
 }
