@@ -7,13 +7,13 @@ import Pagination from './components/Pagination/Pagination';
 import { Search } from './components/Search/Search';
 
 function App() {
-  let [pageNumber, setPageNumber] = useState(10);
+  let [pageNumber, setPageNumber] = useState(1);
   let [search, setSearch] = useState("");
-  let [fetchedData, updateFetchData] = useState([])
+  let [fetchedData, updateFetchData] = useState([]);
   let { info, results } = fetchedData;
   
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`; 
   
 
   useEffect(()=>{
@@ -27,7 +27,7 @@ function App() {
     <div className="App">
       <h1 className="text-center ubuntu my-4">Rick and Morty  <span className="text-primary">WiKi</span> 
       </h1>
-    <Search setSearch={setSearch}/>
+    <Search setSearch={setSearch} setPageNumber={setPageNumber}/>
 
       <div className="container">
         <div className="row">
@@ -42,7 +42,7 @@ function App() {
         </div>
       </div>
 
-      <Pagination setPageNumber={setPageNumber} pageNumber={pageNumber}/>
+      {/* <Pagination info={info} setPageNumber={setPageNumber} pageNumber={pageNumber} /> */}
     </div>
   );
 }
