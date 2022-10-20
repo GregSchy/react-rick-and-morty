@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 import styles from './Search.module.scss'
 
@@ -17,3 +18,5 @@ export const Search = ({ setSearch, setPageNumber }) => {
     </form>
   )
 }
+=======
+>>>>>>> parent of fd00b50 (v5)
